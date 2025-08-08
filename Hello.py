@@ -12,8 +12,8 @@
 # TH2
 def get_valid_name():
     while True:
-        name = input("Tên của bạn là gì? ").strip()  # Loại bỏ khoảng trắng đầu và cuối
-        if name.replace(" "," ").isalpha(): # Kiểm tra xem tên có chỉ chứa chữ cái và khoảng trắng không
+        name =input("Tên của bạn là gì? ").strip()
+        if all(part.isalpha() for part in name.split()) and 2 <= len(name) <= 30: # Kiểm tra tên chỉ chứa chữ cái và khoảng trắng, độ dài từ 2 đến 30 ký tự
             return name.title() # Chuyển đổi tên thành chữ hoa đầu mỗi từ
         else:
             print("❌Tên không hợp lệ, vui lòng chỉ nhập chữ cái, không có số hay kí tự đặc biệt.\n")
